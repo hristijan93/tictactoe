@@ -4,7 +4,7 @@
 
 :root {
     --cell-size: 100px;
-    --mark-size: calc(var(var(--cell-size) - .9));
+    --mark-size: calc(var(--cell-size) * 0.9);
 }
 
 body {
@@ -53,8 +53,12 @@ body {
 
 .cell.x::before,
 .cell.x::after {
-    content: ' ';
-    width: (calc(var(--mark-size) * .15));
+    content: '';
+    width: calc(var(--mark-size) * .15);
     height: var(--mark-size);
     background-color: black;
+}
+
+.cell.x::before {
+    /* transform: rotate(45deg); */
 }
